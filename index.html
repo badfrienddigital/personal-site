@@ -125,6 +125,7 @@ Nice "Howard and the Purple Crayon" color #986794
       -webkit-padding-start: 0;
       margin-left:0;
       padding: 1rem;
+      /*padding-bottom: 1rem;*/
       list-style-type:none;
       line-height: 1;
   }
@@ -247,7 +248,7 @@ Nice "Howard and the Purple Crayon" color #986794
 
 
 
-
+ 
 
 
   @media screen and (max-width: 60em) and (min-width: 30em){
@@ -255,10 +256,10 @@ Nice "Howard and the Purple Crayon" color #986794
 
 /* Weird layout fix for tweet div */
     .tweep {
-      line-height: 1.3;
+      line-height: 1.28;
     }
-  }
 
+}
 
 /* Add CSS CLIP paths to make Medium breakpoint divs more interesting */
 
@@ -290,8 +291,7 @@ Nice "Howard and the Purple Crayon" color #986794
   .par:hover .uppy,
   .par:focus .uppy,
   .par:active .uppy {
-    display: inline-block;
-    -ms-transform: translateY(-3px); /* IE 9 */
+    display: inline-block; /* IE 9 */
     -webkit-transform: translateY(-3px);/* Chrome, Safari, Opera */
     transform: translateY(-3px);
   }
@@ -299,8 +299,7 @@ Nice "Howard and the Purple Crayon" color #986794
   .par:hover .flippy,
   .par:focus .flippy,
   .par:active .flippy {
-    display: inline-block;
-    -ms-transform: rotate(180deg); /* IE 9 */
+    display: inline-block; /* IE 9 */
     -webkit-transform: rotate(180deg);/* Chrome, Safari, Opera */
     transform: rotate(180deg);
   }
@@ -308,8 +307,7 @@ Nice "Howard and the Purple Crayon" color #986794
   .par:hover .flip-h,
   .par:focus .flip-h,
   .par:active .flip-h {
-    display: inline-block;
-    -ms-transform: rotate(80deg); /* IE 9 */
+    display: inline-block; /* IE 9 */
     -webkit-transform: rotate(80deg);/* Chrome, Safari, Opera */
     transform: rotate(80deg);
   }
@@ -350,11 +348,21 @@ Nice "Howard and the Purple Crayon" color #986794
  }
 
 
-/*align-items: flex-end;*/
-
     </style>
 
 <body>
+
+
+<!--
+add a "skip to content" link,
+hidden offscreen with CSS
+<a class="accessible" href="#main">[Skip to Content]</a>
+-->
+
+<!-- add site map,
+add meta description -->
+
+
   <main class="cf pa0 pa4-m pa5-l mw9 center z-2">
   <div class="br2 br0-ns bcol b--none-l fr w-100 w-90-l lite pa2 ph3-ns ba">
   <!-- <section class="pa2 ph3-ns"> -->
@@ -362,20 +370,23 @@ Nice "Howard and the Purple Crayon" color #986794
     <h1 id="header" role="banner" class="mt3-ns tc tl-ns f1-ns f2 avenir tight-track fw6 fw7-m fw8-l"><span class="letfix">r</span>yan t. little</h1>
   </div>
     <nav id="navigation" class="f6 br2 br0-ns fr w-100 w-90-l mb1 dork-f" role="navigation">
-        <div id="blog" aria-label="blog" class="par shadd lh-solid-l b--none-l lite f4-l tracked-tight fr-ns ba b mt4-l ml2-l tc w-100-m ph2-l mw-20-l pointer">
+        <div id="blog" aria-label="blog" class="par ma0-m shadd lh-solid-l b--none-l lite f4-l tracked-tight fr-ns ba b mt4-l ml2-l tc w-100-m ph2-l mw-20-l pointer">
           <p aria-hidden="true" aria-live="off" class="underline-hover">
             <span class="skish">B</span>L<span class="skish hider">A</span>O<span class="hider flip-h">R</span>G<span class="hider skish">!!</span>
           </p>
         </div>
-        <a href="http://twitter.com/ryantereu" class="no-underline"><div id="tweet" aria-label="tweet" class="par tweep br2 br0-ns shadd lh-solid-l b--none-l lite f5-l fr-ns b ba ml2-l mt3-l tc w-50-m ph2-l mw-20-l pointer">
+        <a href="http://twitter.com/ryantereu" class="no-underline"><div id="tweet" aria-label="tweet" class="par ma0-m tweep br2 br0-ns shadd lh-solid-l b--none-l lite f5-l fr-ns b ba ml2-l mt3-l tc w-50-m ph2-l mw-20-l pointer">
           <p aria-hidden="true" aria-live="off" class="underline-hover">
             <span class="flip-h">T</span>W<span class="hider uppy skish">E</span>EET
           </p>
         </div></a>
-        <ul id="writing" aria-label="writing" class="br2 br0-ns list list-fix par dropdown shadd lh-solid-l b--none-l lite f3-l tracked-l mts2 fr-ns b ba tc w-50-m ml1-l pointer">
+        <ul id="writing" aria-label="writing" class="br2 br0-ns list list-fix par ma0 dropdown shadd lh-solid-l b--none-l lite f3-l tracked-l mts2 fr-ns b ba tc w-50-m ml1-l pointer">
           <li>
-            <input id="check01" type="checkbox" name="menu"/>
-            <label for="check01" aria-hidden="true" aria-live="off" class="inher1"><span class="pre"> </span><span class="uppy">W</span>RI<span class="flippy">T</span>IN<span class="flip-h">G</span><span class="pre"> </span></label>
+
+
+            <!-- input and label els may not be properly accessible -->
+            <input id="check01" type="checkbox" name="menu" class="w-50-m lh-solid-l" />
+            <label for="check01" aria-hidden="true" aria-live="off"><span class="pre"> </span><span class="uppy">W</span>RI<span class="flippy">T</span>IN<span class="flip-h">G</span><span class="pre"> </span></label>
 
             <ul id="writing links" aria-label="writing links" class="submenu ttl dropdown-content tl f6 f5-l absolute-l pb2 list ph1 lh-title">
 
@@ -385,12 +396,12 @@ Nice "Howard and the Purple Crayon" color #986794
             </ul>
           </li>
         </ul>
-        <a href="http://badfriendrecords.com" class="no-underline"><div id="label" aria-label="label" class="par br2 br0-ns shadd lh-solid-l b--none-l lite f3-l tracked-tight fr-ns mr3-l b ba mt2-l tc w-50-m ml3-l ph3-l mw-20-l pointer">
+        <a href="http://badfriendrecords.com" class="no-underline"><div id="label" aria-label="label" class="par ma0-m br2 br0-ns shadd lh-solid-l b--none-l lite f3-l tracked-tight fr-ns mr3-l b ba mt2-l tc w-50-m ml3-l ph3-l mw-20-l pointer">
           <p aria-hidden="true" aria-live="off" class="underline-hover">
             <span class="hider pre"><span class="f7-l"> </span>  </span>L<span class="skish"><span class="hider uppy">O</span>AB</span>EL<span class="hider pre">  </span>
           </p>
         </div></a>
-        <a href="http://tereutereu.com" class="no-underline underline-hover"><div id="music" aria-label="music" class="par br2 br0-ns shadd lh-solid-l b--none-l lite f3-l tracked fr-ns b ba mts1 mh2-l tc w-50-m ph1-l mw-20-l pointer">
+        <a href="http://tereutereu.com" class="no-underline underline-hover"><div id="music" aria-label="music" class="par ma0-m br2 br0-ns shadd lh-solid-l b--none-l lite f3-l tracked fr-ns b ba mts1 mh2-l tc w-50-m ph1-l mw-20-l pointer">
           <p aria-hidden="true" aria-live="off" class="underline-hover">
             M<span class="uppy">U</span>SI<span class="hider uppy skish f5-l">C</span>C
           </p>
@@ -412,9 +423,6 @@ Nice "Howard and the Purple Crayon" color #986794
 
 </div>
 
-
-
-<!-- <p>hello world</p> -->
 
 </body>
 </html>
